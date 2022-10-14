@@ -39,16 +39,18 @@ class ApplicationController < ActionController::Base
   end 
   
   def payment_form
-    render({ :template => "calculation_templates/payment_form.html.erb" })
+    render({ :template => "calculation_templates/payment_form.html.erb"})
   end
   
   def calculate_payment
     @rate = params.fetch("percent_rate").to_f
-    
+     @r = @rate/100/12
     @years = params.fetch("repayment").to_f
-
+      @n = 12* @years
     @principal = params.fetch("principal_amount").to_f
-    
+      @p = (@r*@principal)/( 1-(1+@r)**-@n    )
+      @p = @p.to_s(:currency)
+      @rate = @rate.to_s(:percentage) 
     render({ :template => "calculation_templates/payment_results.html.erb" })
   end  
 end
