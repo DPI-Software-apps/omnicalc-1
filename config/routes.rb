@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get("/random/results", { :controller => "application", :action => "calculate_random" })
 
-  get("/random/new", { :controller => "application", :action => "pick_random_number" })
+  get("/random/new", { :controller => "application", :action => "random_number" })
 end

@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/rand_results.html.erb" })
   end 
   
-  def pick_random_number 
-    
+  def random_number
+
     render({ :template => "calculation_templates/random_form.html.erb" })
+  end  
 end
