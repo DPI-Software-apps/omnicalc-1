@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   get("/square/results", { :controller => "application", :action => "calculate_square" })
 
-  get("/random/results", { :controller => "application", :action => "calculate_random" })
+  get("/rand/results", { :controller => "application", :action => "calculate_random" })
 
-  get("/random/new", { :controller => "application", :action => "random_number" })
+  get("/random/new", { :controller => "application", :action => "random_number_form" })
+
+  get("/square_root/new", { :controller => "application", :action => "square_root_number_form"})
+
+  get("/square_root/results", { :controller => "application", :action => "calculate_square_root" })
 end
