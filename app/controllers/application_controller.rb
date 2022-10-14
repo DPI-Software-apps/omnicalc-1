@@ -27,14 +27,14 @@ class ApplicationController < ActionController::Base
   end 
   
   def square_root_number_form
-    render({ :template => "calculation_templates/square_root_form.html.erb "})
+    render({ :template => "calculation_templates/square_root_form.html.erb"})
   end
   
   def calculate_square_root
-     @num = params.fetch("root number").to_f
+     @num = params.fetch("root_number").to_f
 
-     @square_root_of_num = @num ** @num 
+     @square_root_of_num = Math.sqrt(@num)
      
-    render({ :template => "calculation_templates/square_root_results.html.erb "})
+    render({ :template => "calculation_templates/square_root_results.html.erb"})
   end  
 end
